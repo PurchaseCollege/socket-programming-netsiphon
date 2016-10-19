@@ -106,8 +106,6 @@ def main(argv):
                                      
             #response_forbidden(conn)
             try:
-                access_log.close
-                error_log.close
                 conn.shutdown(1)
                 conn.close
             except NameError:
@@ -117,8 +115,6 @@ def main(argv):
         if DEBUG:
             logging.debug('main::Exception->' + str(type(e)) + ':' + str(e))
         try:
-            access_log.close
-            error_log.close
             conn.shutdown(1)
             conn.close
         except:
